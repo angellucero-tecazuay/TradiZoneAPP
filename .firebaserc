@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tradizoneapp": {
+      "hosting": {
+        "app": [
+          "tradizoneapp"
+        ]
+      }
+    }
+  }
+}
