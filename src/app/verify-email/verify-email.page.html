@@ -1,6 +1,11 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>Verificación de correo electrónico</ion-title>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button class="backbtn" routerLink="/welcome" routerDirection="back">
+                <ion-icon name="arrow-back-circle"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Verificación de cuenta</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -14,7 +19,10 @@
     </ion-row>
     <ion-row>
         <ion-col>
-            <ion-button type="submit" (clic)="onSendEmail()" expand="block">Reenviar Correo</ion-button>
+            <div class="button-container">
+                <ion-button (clic)="onSendEmail()" expand="block" class="main-button">Reenviar Correo</ion-button>
+                <ion-button expand="block" class="main-button" routerLink="/login">Iniciar Sesión</ion-button>
+            </div>
         </ion-col>
     </ion-row>
 </ion-content>

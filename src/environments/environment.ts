@@ -1,13 +1,13 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-  apiKey: "AIzaSyBNgiiwNp17uKfE3m9-W7dCTdZerZ1_1us",
-  authDomain: "tradizoneapp.firebaseapp.com",
-  projectId: "tradizoneapp",
-  storageBucket: "tradizoneapp.appspot.com",
-  messagingSenderId: "2420963145",
-  appId: "1:2420963145:web:b54531d4e1cac1604e0c98",
-  measurementId: "G-27K7LLV92M"
+    apiKey: "AIzaSyBRUAVDGRmmfl5r_uVUPuf_bxD8-gyzQ_o",
+    authDomain: "tradizone-4410c.firebaseapp.com",
+    projectId: "tradizone-4410c",
+    storageBucket: "tradizone-4410c.appspot.com",
+    messagingSenderId: "5248359912",
+    appId: "1:5248359912:web:8ec8a7ca3b5a3ccbd7585d",
+    measurementId: "G-4CH6MGYKK4"  
 },
 };
 
