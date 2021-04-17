@@ -47,7 +47,6 @@
                         </ion-tab-button>
                     </ion-tab-bar>
                 </ion-tabs>
-
             </ion-list>
         </ion-content>
     </ion-menu>
@@ -64,20 +63,8 @@
 
         <ion-content>
             <div class="title ion-padding">
-                <h2>Categorías</h2>
+                <h4 class="font-bold">Categorías</h4>
             </div>
-            <!--
-            <div class="category-slider ion-padding-start">
-                <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-                    <ion-slide *ngFor="let category of categories">
-                        <ion-col>
-                            <h4>{{ category.name }}</h4>
-                            <img src="{{ category.image }}" />
-                        </ion-col>
-                    </ion-slide>
-                </ion-slides>
-            </div>
-            -->
             <div class="category-slider ion-padding-start">
                 <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
                     <ion-slide *ngFor="let c of categorieslist">
@@ -90,33 +77,18 @@
             </div>
 
             <div class="title ion-padding">
-                <h2 class="font-bold">Comida</h2>
-                <p>Ver más</p>
+                <h4 class="font-bold">Comida</h4>
             </div>
-            <ion-grid color="primary">
-                <ion-row>
-                    <ion-col>
-                        <ion-card>
-                            <img src="https://lh3.googleusercontent.com/EN1db7_cq9KZX4HhsrZqR82pT-Je9brtFtfS1z5Wu0aUntkxqV1jXbOYfVELw321KPIvmzMkZvgcmY85UvkfPYv7VH7XXV9c-ymQHkrZ0Yxgc3AZghzs-WPY4denyRAm_nyXtlfOPB2itEg8K-MfelKq3nbCEutRgEH7hDvAqYdPBgsjLXUlcDHkqC0gODDW1t1n8-DJckai9VY4lC2c4g30gaJMrrdnz7hOr8F17395w7SFLm00ZCVfOBHJkvdINO5e9FP9RU7qAq1Lfha8kFZwQusC0P-AXVxw0hECfGPUc_UspZpsZomRiUk9wlLAkdyf5EbTsUOvyx0HR-5n_4MZh_7p6xo4UNZVJMpIw6i_2MHo4RS3YLAi3FbeLzhrBYLcZZX7rQ8OGaMb3H0FzarP02gx_a5hW7_OVxt9-qx6PhfvSgIZZN4Mh-weqVsEkqWaajbitH0JS3XxixIeI2UI8u21zABkDnXbLtjY6KpmItTSS44OE9zMyaFzY7YS2qSykFyNR-deR8kfqcZYZa6bH7ncoCxGwd4fBIFwfcW3O4ULCL5m7-R0tVcgeuWUW3oUUZw99XRVrn5o5T5URuLle-TvFKPUi7Zle4ptuBxj_rPbzcFzPnQDZYfUNbLdJo4YpuaKseob4aav7C_uTr9nKZbfI-13olBbp0DJAnlZ2XjGfIbbinAr1FxSq6bz3IzF9XyFfobl7sBjEtFUJw=s351-no?authuser=0"
-                                routerLink="/food">
-                            <ion-card-header>
-                                <ion-card-title routerLink="/food">{{nombrePlatillo}}</ion-card-title>
-                                <ion-label routerLink="/restaurant">{{restaurante}}</ion-label>
-                                <ion-card-title routerLink="/food">{{precio}}</ion-card-title>
-                            </ion-card-header>
-                        </ion-card>
-                    </ion-col>
-                    <ion-col>
-                        <ion-card>
-                            <img src="https://photos.app.goo.gl/ACsM1fYc5LpopBju5" routerLink="/food" />
-                            <ion-card-header>
-                                <ion-card-title routerLink="/food">{{nombrePlatillo}}</ion-card-title>
-                                <ion-label routerLink="/restaurant">{{restaurante}}</ion-label>
-                                <ion-card-title routerLink="/food">{{precio}}</ion-card-title>
-                            </ion-card-header>
-                        </ion-card>
-                    </ion-col>
-                </ion-row>
+            <ion-grid>
+                <ion-card *ngFor="let f of foodlist">
+                    <img src={{f.food_image}} routerLink="/food">
+                    <ion-card-header>
+                        <ion-card-title routerLink="/food">{{f.food_name}}</ion-card-title>
+                        <ion-label routerLink="/restaurant">{{f.food_restaurant}}</ion-label><br>
+                        <ion-label>{{f.food_description}}</ion-label>
+                        <ion-card-title routerLink="/food">$ {{f.food_cost}}</ion-card-title>
+                    </ion-card-header>
+                </ion-card>
             </ion-grid>
         </ion-content>
     </div>
