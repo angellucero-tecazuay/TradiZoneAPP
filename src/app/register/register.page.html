@@ -9,14 +9,13 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding ion-text-center">
+<ion-content>
     <form>
-        <ion-item lines="full">
+        <ion-item lines="full" class="button-container">
             <ion-label position="floating">Correo electrónico</ion-label>
             <ion-input type="text" #email required></ion-input>
         </ion-item>
-
-        <ion-item lines="full">
+        <ion-item lines="full" class="button-container">
             <ion-label position="floating">Contraseña</ion-label>
             <ion-input type="password" #password required></ion-input>
         </ion-item>
@@ -27,10 +26,11 @@
                 </div>
             </ion-col>
         </ion-row>
+        <ion-row>
+            <ion-col>
+                <p class="ion-text-center"><a routerLink="/login">Ya tengo una cuenta</a></p>
+            </ion-col>
+        </ion-row>
     </form>
-    <ion-row>
-        <ion-col>
-            <p><a routerLink="/login">Ya tengo una cuenta</a></p>
-        </ion-col>
-    </ion-row>
+
 </ion-content>

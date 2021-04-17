@@ -12,16 +12,16 @@
 <ion-content *ngIf="user$ | async as user">
     <ion-row>
         <ion-col>
-            <h2>Gracias por registrarte</h2>
-            <p>Hemos enviado un correo a <strong>{{user.email}}</strong> para la confirmación</p>
-            <p>Por favor verifica tu correo</p>
+            <h2 class="ion-text-center">Gracias por registrarte</h2>
+            <p class="ion-text-center">Hemos enviado un correo a <strong>{{user.email}}</strong> para la confirmación</p>
+            <p class="ion-text-center">Por favor verifica tu correo</p>
         </ion-col>
     </ion-row>
     <ion-row>
         <ion-col>
             <div class="button-container">
                 <ion-button (clic)="onSendEmail()" expand="block" class="main-button">Reenviar Correo</ion-button>
-                <ion-button expand="block" class="main-button" routerLink="/login">Iniciar Sesión</ion-button>
+                <p class="ion-text-center"><a routerLink="/login">Iniciar Sesión</a></p>
             </div>
         </ion-col>
     </ion-row>
