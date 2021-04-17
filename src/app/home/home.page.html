@@ -64,8 +64,7 @@
 
         <ion-content>
             <div class="title ion-padding">
-                <h2>Categories</h2>
-                <p>See all</p>
+                <h2>Categorías</h2>
             </div>
             <!--
             <div class="category-slider ion-padding-start">
@@ -80,8 +79,8 @@
             </div>
             -->
             <div class="category-slider ion-padding-start">
-                <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" *ngFor="let c of categorieslist">
-                    <ion-slide>
+                <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+                    <ion-slide *ngFor="let c of categorieslist">
                         <ion-col>
                             <h4>{{c.category_name}}</h4>
                             <img src={{c.category_image}}/>
@@ -92,9 +91,9 @@
 
             <div class="title ion-padding">
                 <h2 class="font-bold">Comida</h2>
-                <p>See all</p>
+                <p>Ver más</p>
             </div>
-            <ion-grid>
+            <ion-grid color="primary">
                 <ion-row>
                     <ion-col>
                         <ion-card>
