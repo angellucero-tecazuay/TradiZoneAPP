@@ -1,14 +1,16 @@
 ion-card {
-    margin: 0;
+    margin: 10px;
     border: 0;
     padding: 0;
-    min-height: 50vh;
-    background-color: white;
+    min-height: 100%;
     position: relative;
-    top: -25px;
 }
 
 ion-card-title {
     text-align: center;
     color: black;
+}
+
+img {
+    width: 100%;
 }

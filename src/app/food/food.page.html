@@ -1,14 +1,17 @@
 <ion-header>
-    <!--
-  <ion-toolbar>
-    <ion-title>food</ion-title>
-  </ion-toolbar>
-  -->
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+                <ion-icon name="arrow-back-circle"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>{{food_name}}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <img src="../../assets/icon/images/food1.jpg" alt="">
     <ion-card>
+        <img src="https://res.cloudinary.com/ista-tradizone-app-20/image/upload/v1618628905/TradiZone/food/CuyPapas_al3jzz.jpg">
         <ion-card-header>
             <ion-card-title>Comida 1</ion-card-title>
             <ion-label> sob comida 1</ion-label>

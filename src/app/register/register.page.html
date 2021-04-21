@@ -12,6 +12,10 @@
 <ion-content>
     <form>
         <ion-item lines="full" class="button-container">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" #name required></ion-input>
+        </ion-item>
+        <ion-item lines="full" class="button-container">
             <ion-label position="floating">Correo electrónico</ion-label>
             <ion-input type="text" #email required></ion-input>
         </ion-item>
@@ -31,6 +35,9 @@
                 <p class="ion-text-center"><a routerLink="/login">Ya tengo una cuenta</a></p>
             </ion-col>
         </ion-row>
-    </form>
 
+    </form>
+    <footer class="footer text-center fixed-bottom">
+        <div><a routerLink="/login">Vender con TradiZone</a></div>
+    </footer>
 </ion-content>

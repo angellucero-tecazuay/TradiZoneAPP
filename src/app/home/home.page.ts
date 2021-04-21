@@ -11,15 +11,10 @@ export class HomePage {
   public categorieslist = [];
   public foodlist = [];
 
-
-  user = "Mi Cuenta"
-  nombrePlatillo = 'Cuy';
-  restaurante = 'El Alcatraz';
-  precio = '$20.00'
-
   constructor(private toastservice: ToastService, private fbstore: AngularFirestore) {
     this.getCategories()
     this.getFood();
+    this.toastservice.showToast('Bienvenido', 2000);
   }
 
   async getCategories(){
@@ -28,7 +23,7 @@ export class HomePage {
       .subscribe(data => {
         this.categorieslist = data.map(result => {
           return {
-            docid: result.payload.doc.id,
+            category_id: result.payload.doc.id,
             category_name: result.payload.doc.data()["category_name"],
             category_image: result.payload.doc.data()["category_image"]
           }
@@ -45,7 +40,7 @@ export class HomePage {
       .subscribe(data => {
         this.foodlist = data.map(result => {
           return {
-            docid: result.payload.doc.id,
+            food_id: result.payload.doc.id,
             food_name: result.payload.doc.data()["food_name"],
             food_image: result.payload.doc.data()["food_image"],
             food_restaurant: result.payload.doc.data()["food_restaurant"],

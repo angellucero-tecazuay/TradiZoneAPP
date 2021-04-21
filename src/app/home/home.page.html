@@ -2,17 +2,17 @@
     <ion-menu side="start" content-id="main-content">
         <ion-header>
             <ion-toolbar translucent color="primary">
-                <ion-title>TradiZone</ion-title>
+                <img class="img-navbar" src="https://res.cloudinary.com/ista-tradizone-app-20/image/upload/v1618963178/TradiZone/LogoNavBarGif_d70sqq.gif" />
             </ion-toolbar>
         </ion-header>
         <ion-content>
             <ion-list>
                 <ion-item>
                     <ion-icon name="person" slot="start"></ion-icon>
-                    <ion-label>{{user}}</ion-label>
+                    <ion-label>Usuario</ion-label>
                 </ion-item>
                 <ion-item>
-                    <ion-icon name="book" slot="start"></ion-icon>
+                    <ion-icon routerLink="/add-product" name="book" slot="start"></ion-icon>
                     <ion-label>Historia</ion-label>
                 </ion-item>
                 <ion-item>
@@ -62,30 +62,25 @@
         </ion-header>
 
         <ion-content>
-            <div class="title ion-padding">
-                <h4 class="font-bold">Categorías</h4>
-            </div>
             <div class="category-slider ion-padding-start">
                 <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
                     <ion-slide *ngFor="let c of categorieslist">
-                        <ion-col>
+                        <ion-col routerLink="/category">
                             <h4>{{c.category_name}}</h4>
                             <img src={{c.category_image}}/>
                         </ion-col>
                     </ion-slide>
                 </ion-slides>
             </div>
-
-            <div class="title ion-padding">
-                <h4 class="font-bold">Comida</h4>
-            </div>
             <ion-grid>
                 <ion-card *ngFor="let f of foodlist">
                     <img src={{f.food_image}} routerLink="/food">
                     <ion-card-header>
-                        <ion-card-title routerLink="/food">{{f.food_name}}</ion-card-title>
-                        <ion-label routerLink="/restaurant">{{f.food_restaurant}}</ion-label><br>
-                        <ion-label>{{f.food_description}}</ion-label>
+                        <ion-card-title routerLink="/food"><b>{{f.food_name}}</b></ion-card-title>
+                        <ion-card-subtitle routerLink="/restaurant">{{f.food_restaurant}}</ion-card-subtitle><br>
+                        <ion-card-content routerLink="/food">
+                            {{f.food_description}}
+                        </ion-card-content>
                         <ion-card-title routerLink="/food">$ {{f.food_cost}}</ion-card-title>
                     </ion-card-header>
                 </ion-card>

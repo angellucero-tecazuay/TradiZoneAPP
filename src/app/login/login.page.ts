@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -9,24 +10,28 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private authSvc: AuthService, private router: Router) { }
+  constructor(private authSvc: AuthService, private router: Router, private toastservice: ToastService) { }
 
   ngOnInit() {
   }
 
   async onLogin(email, password){
-    console.log(email.value);
-    console.log(password.value);
-    
-    try {
-      const user = await this.authSvc.login(email.value, password.value);
-      if(user){
-        const isVerified = this.authSvc.isEmailVerified(user);
-        this.redirectUser(isVerified);
+    if(email.value == null || password.value == null){
+      this.toastservice.showToast("Campos vacíos", 5000);
+      console.log("Campos vacís");
+    }else{
+      try {
+        const user = await this.authSvc.login(email.value, password.value);
+        if(user){
+          const isVerified = this.authSvc.isEmailVerified(user);
+          this.redirectUser(isVerified);
+        }
+      } catch (error) {
+        this.toastservice.showToast(error.message, 5000);
       }
-    } catch (error) {
-      console.log('Error ->', error);
     }
+
+    
   }
 
   async onLoginGoogle(email, password){

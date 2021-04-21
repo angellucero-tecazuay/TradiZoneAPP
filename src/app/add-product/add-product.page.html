@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button class="backbtn" routerLink="/welcome" routerDirection="back">
+                <ion-icon name="arrow-back-circle"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Añadir producto</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form>
+        <ion-item lines="full" class="button-container">
+            <ion-label position="floating">Nombre de la comida</ion-label>
+            <ion-input type="text" #name required></ion-input>
+        </ion-item>
+        <ion-item lines="full" class="button-container">
+            <ion-label position="floating">Descripción</ion-label>
+            <ion-input type="text" name="description" required></ion-input>
+        </ion-item>
+        <ion-item lines="full" class="button-container">
+            <ion-label position="floating">Imagen (url)</ion-label>
+            <ion-input type="password" #name required></ion-input>
+        </ion-item>
+        <ion-item lines="full" class="button-container">
+            <ion-label position="floating">Precio</ion-label>
+            <ion-input type="password" #name required></ion-input>
+        </ion-item>
+        <ion-item lines="full" class="button-container">
+            <ion-row>
+                <ion-col>
+                    <ion-label position="floating">Categoría</ion-label>
+                </ion-col>
+                <ion-col>
+                    <select name="select">Categoría
+                      <option value="value1" selected>Comida</option>
+                      <option value="value2">Bebida</option>
+                      <option value="value3">Postres</option>
+                      <option value="value4">Helados</option>
+                      <option value="value5">Recetas</option>
+              </select>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+        <ion-item lines="full" class="button-container">
+            <ion-label position="floating">Restaurante</ion-label>
+            <ion-input type="password" #name required></ion-input>
+        </ion-item>
+        <ion-row>
+            <ion-col>
+                <div class="button-container">
+                    <ion-button expand="block" class="main-button" (click)="doAddnew()">Guardar</ion-button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>

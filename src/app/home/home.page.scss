@@ -1,11 +1,6 @@
-div,
-ion-grid {
-    background-color: #ffffff;
-}
-
 ion-grid,
 ion-list {
-    min-height: 93vh;
+    min-height: 100%;
 }
 
 ion-card,
@@ -26,23 +21,12 @@ img {
     width: 100%;
 }
 
-.title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    h4 {
-        margin: 0 0 0 16px;
-        color: #434343;
-    }
-}
-
 .category-slider {
     ion-slide {
         width: 150px;
         height: 100px;
         margin-right: 10px;
         margin-left: 0px;
-        margin-bottom: 5px;
         ion-col {
             height: 100%;
             display: flex;
@@ -69,7 +53,18 @@ img {
 }
 
 ion-card {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+ion-slides {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ion-card-content {
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
