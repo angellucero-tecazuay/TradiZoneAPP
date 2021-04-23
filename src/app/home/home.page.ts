@@ -1,6 +1,8 @@
+import { Token } from './../shared/token';
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastService } from '../services/toast.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +10,12 @@ import { ToastService } from '../services/toast.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public statusTokenUser: string;
+  public tokens : Array<Token>; 
   public categorieslist = [];
   public foodlist = [];
 
-  constructor(private toastservice: ToastService, private fbstore: AngularFirestore) {
+  constructor(private toastservice: ToastService, private fbstore: AngularFirestore, private router:Router) {
     this.getCategories()
     this.getFood();
     this.toastservice.showToast('Bienvenido', 2000);
@@ -29,6 +33,7 @@ export class HomePage {
           }
         });
       });
+      
     }catch(error){
       this.toastservice.showToast(error.message, 2000);
     }
@@ -52,5 +57,9 @@ export class HomePage {
     }catch(error){
       this.toastservice.showToast(error.message, 2000);
     }
+  }
+
+  goToCategory(id:number){
+    this.toastservice.showToast(id, 2000);
   }
 }

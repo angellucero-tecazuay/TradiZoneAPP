@@ -16,9 +16,8 @@ export class LoginPage implements OnInit {
   }
 
   async onLogin(email, password){
-    if(email.value == null || password.value == null){
-      this.toastservice.showToast("Campos vacíos", 5000);
-      console.log("Campos vacís");
+    if(email == "" || password == ""){
+      this.toastservice.showToast("Campos vacíos", 2000);
     }else{
       try {
         const user = await this.authSvc.login(email.value, password.value);
@@ -27,15 +26,15 @@ export class LoginPage implements OnInit {
           this.redirectUser(isVerified);
         }
       } catch (error) {
-        this.toastservice.showToast(error.message, 5000);
+        this.toastservice.showToast(error.message, 2000);
       }
     }
 
     
   }
 
-  async onLoginGoogle(email, password){
-    /*try {
+  async onLoginGoogle(){/*
+    try {
       const user = await this.authSvc.loginGoogle();
       if(user){
         const isVerified = this.authSvc.isEmailVerified(user);

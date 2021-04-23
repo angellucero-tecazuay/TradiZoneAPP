@@ -65,7 +65,8 @@
             <div class="category-slider ion-padding-start">
                 <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
                     <ion-slide *ngFor="let c of categorieslist">
-                        <ion-col routerLink="/category">
+                        <ion-col (click)="goToCategory(0)">
+                            <h5 id="id">{{c.category_id}}</h5>
                             <h4>{{c.category_name}}</h4>
                             <img src={{c.category_image}}/>
                         </ion-col>
