@@ -1,4 +1,9 @@
-ion-grid,
+#nav {
+    align-content: center;
+    text-align: center;
+}
+
+ion-chip ion-grid,
 ion-list {
     min-height: 100%;
 }
@@ -67,4 +72,16 @@ ion-card-content {
     margin: 0;
     border: 0;
     padding: 0;
+}
+
+.navbar,
+ion-list {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+ion-chip {
+    font-size: 105%;
+    background-color: #ffffff;
 }

@@ -13,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 
 //import { Validator } from './helpers/validation.helpers';
+import { VerifyEmailPage } from './verify-email/verify-email.page';
 
 @NgModule({
   declarations: [

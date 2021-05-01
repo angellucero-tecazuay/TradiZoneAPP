@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restaurant.page.scss'],
 })
 export class RestaurantPage implements OnInit {
+  restaurant_name = 'El Alcatraz';
+
   showInfo = true
   showFood = false
   showRecipe = false

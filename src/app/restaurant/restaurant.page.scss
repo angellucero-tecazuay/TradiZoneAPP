@@ -1,7 +1,17 @@
+ion-card {
+    margin: 10px;
+    border: 0;
+    padding: 0;
+    min-height: 97%;
+    position: relative;
+}
+
 img {
     width: 100%;
 }
 
-ion-card-header {
-    min-height: 7vh;
+ion-card-subtitle {
+    width: 100%;
+    align-content: center;
+    text-align: center;
 }

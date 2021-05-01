@@ -5,7 +5,7 @@
                 <ion-icon name="arrow-back-circle"></ion-icon>
             </ion-button>
         </ion-buttons>
-        <ion-title>{{food_name}}</ion-title>
+        <ion-title>Detalles</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -13,8 +13,26 @@
     <ion-card>
         <img src="https://res.cloudinary.com/ista-tradizone-app-20/image/upload/v1618628905/TradiZone/food/CuyPapas_al3jzz.jpg">
         <ion-card-header>
-            <ion-card-title>Comida 1</ion-card-title>
-            <ion-label> sob comida 1</ion-label>
+            <ion-card-title class="title">{{food_name}}</ion-card-title><br>
+            <ion-label>{{food_desc}}</ion-label><br>
+            <ion-card-title>${{food_cost}}</ion-card-title>
         </ion-card-header>
+        <ion-tabs>
+            <ion-tab-bar slot="bottom" color="primary">
+                <ion-tab-button (click)="goFood()">
+                    <ion-icon name="restaurant"></ion-icon>
+                    <ion-label>{{food_restaurant}}</ion-label>
+                </ion-tab-button>
+                <ion-tab-button (click)="call()">
+                    <ion-icon name="call"></ion-icon>
+                    <ion-label>Contactar</ion-label>
+                </ion-tab-button>
+                <ion-tab-button href="https://goo.gl/maps/QYsvJZ73jtbck7rf9" target="_blanck">
+                    <ion-icon name="map"></ion-icon>
+                    <ion-label>Visitar</ion-label>
+                </ion-tab-button>
+            </ion-tab-bar>
+        </ion-tabs>
     </ion-card>
+
 </ion-content>

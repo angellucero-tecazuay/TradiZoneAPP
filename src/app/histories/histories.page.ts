@@ -1,0 +1,36 @@
+import { Historia } from './../services/Historia';
+import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+@Component({
+  selector: 'app-histories',
+  templateUrl: './histories.page.html',
+  styleUrls: ['./histories.page.scss'],
+})
+export class HistoriesPage implements OnInit {
+  historias: Array<Historia>;
+  filterPost= '';
+
+  constructor(private fbstore: AngularFirestore) { }
+
+  ngOnInit(): void {
+    this.getHistorias();
+  }
+
+  getHistorias(){
+    this.fbstore.collection("histories").snapshotChanges().subscribe(data=>{
+      this.historias = data.map(
+        result =>{
+          let historia = new Historia;
+          historia.history_id = result.payload.doc.id;
+          historia.history_description = result.payload.doc.data()["history_description"];
+          historia.history_food_name = result.payload.doc.data()["history_food_name"];
+          historia.history_title = result.payload.doc.data()["history_title"];
+          historia.history_user_name = result.payload.doc.data()["history_user_name"];
+          historia.history_url_image = result.payload.doc.data()["history_url_image"];
+          return historia;
+        }
+      )
+    })
+  }
+}

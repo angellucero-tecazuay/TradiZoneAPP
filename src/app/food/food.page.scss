@@ -2,15 +2,18 @@ ion-card {
     margin: 10px;
     border: 0;
     padding: 0;
-    min-height: 100%;
+    min-height: 97%;
     position: relative;
 }
 
-ion-card-title {
+.title {
     text-align: center;
-    color: black;
 }
 
 img {
     width: 100%;
+}
+
+ion-card-subtitle {
+    font-size: 110%;
 }

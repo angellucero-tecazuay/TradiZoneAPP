@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastService } from '../services/toast.service';
 import { Router } from '@angular/router';
+import { User } from '../shared/user.interface';
+import { AuthService } from '../services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +13,16 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  user$: Observable<User> = this.authSvc.afAuth.user;
   public statusTokenUser: string;
   public tokens : Array<Token>; 
   public categorieslist = [];
   public foodlist = [];
 
-  constructor(private toastservice: ToastService, private fbstore: AngularFirestore, private router:Router) {
+  public showOptions: boolean = false;
+
+  constructor(private toastservice: ToastService, private fbstore: AngularFirestore, 
+    private router:Router, private authSvc: AuthService) {
     this.getCategories()
     this.getFood();
     this.toastservice.showToast('Bienvenido', 2000);
@@ -59,7 +66,18 @@ export class HomePage {
     }
   }
 
-  goToCategory(id:number){
-    this.toastservice.showToast(id, 2000);
+  goToCategory(){
+    let id_categoryN : string = document.getElementById('id_category').innerHTML;
+    this.toastservice.showToast(id_categoryN, 2000);
+    //this.router.navigate(['category']);
+  }
+
+  showOptionsUser(){
+    this.showOptions = !this.showOptions;
+  }
+
+  logOut(){
+    this.authSvc.logout();
+    this.router.navigate(['welcome']);
   }
 }

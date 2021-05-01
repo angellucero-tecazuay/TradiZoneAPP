@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button class="backbtn" routerLink="/home" routerDirection="back">
+                <ion-icon name="arrow-back-circle"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Eventos</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card id="container" *ngFor="let evento of eventos">
+
+        <div class="product-details">
+
+            <h1>{{evento.event_title}}</h1>
+            <span class="hint-star star">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+    </span>
+
+            <p class="information"><i class="fas fa-map-marker-alt"></i> {{evento.event_location}}</p>
+            <p class="information"><i class="fas fa-clock"></i> {{evento.event_date}}</p>
+
+        </div>
+
+        <div class="product-image">
+
+            <img src="{{evento.event_url_image}}" alt="Omar Dsoky">
+
+            <div class="info">
+                <h2>Sobre que trata este evento?</h2>
+                <p>{{evento.event_description}}</p>
+            </div>
+
+        </div>
+    </ion-card>
+</ion-content>
